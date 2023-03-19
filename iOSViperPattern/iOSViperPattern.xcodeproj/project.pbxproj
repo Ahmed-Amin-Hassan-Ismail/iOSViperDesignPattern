@@ -18,6 +18,10 @@
 		ACEC7A7A29C77102009F45FB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7A7929C77102009F45FB /* User.swift */; };
 		ACEC7A7F29C7717D009F45FB /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7A7E29C7717D009F45FB /* UserTableViewCell.swift */; };
 		ACEC7A8129C77483009F45FB /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACEC7A8029C77483009F45FB /* UserTableViewCell.xib */; };
+		ACEC7A8929C778D6009F45FB /* UsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7A8829C778D6009F45FB /* UsersPresenter.swift */; };
+		ACEC7A8B29C778DD009F45FB /* UsersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7A8A29C778DD009F45FB /* UsersInteractor.swift */; };
+		ACEC7A8D29C778E5009F45FB /* UsersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7A8C29C778E5009F45FB /* UsersRouter.swift */; };
+		ACEC7A9029C778F4009F45FB /* UsersProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7A8F29C778F4009F45FB /* UsersProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		ACEC7A7929C77102009F45FB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ACEC7A7E29C7717D009F45FB /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		ACEC7A8029C77483009F45FB /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		ACEC7A8829C778D6009F45FB /* UsersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPresenter.swift; sourceTree = "<group>"; };
+		ACEC7A8A29C778DD009F45FB /* UsersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersInteractor.swift; sourceTree = "<group>"; };
+		ACEC7A8C29C778E5009F45FB /* UsersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRouter.swift; sourceTree = "<group>"; };
+		ACEC7A8F29C778F4009F45FB /* UsersProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +76,7 @@
 			children = (
 				ACEC7A7C29C77132009F45FB /* Application */,
 				ACEC7A7829C770FB009F45FB /* Model */,
-				ACEC7A7B29C7712B009F45FB /* View */,
+				ACEC7A8329C778AD009F45FB /* User */,
 				ACEC7A6229C748BB009F45FB /* Assets.xcassets */,
 				ACEC7A6429C748BB009F45FB /* LaunchScreen.storyboard */,
 				ACEC7A6729C748BB009F45FB /* Info.plist */,
@@ -110,6 +118,50 @@
 				ACEC7A8029C77483009F45FB /* UserTableViewCell.xib */,
 			);
 			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		ACEC7A8329C778AD009F45FB /* User */ = {
+			isa = PBXGroup;
+			children = (
+				ACEC7A8E29C778E8009F45FB /* Protocol */,
+				ACEC7A8629C778C2009F45FB /* Router */,
+				ACEC7A8529C778BC009F45FB /* Interactor */,
+				ACEC7A8429C778B6009F45FB /* Presenter */,
+				ACEC7A7B29C7712B009F45FB /* View */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		ACEC7A8429C778B6009F45FB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				ACEC7A8829C778D6009F45FB /* UsersPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		ACEC7A8529C778BC009F45FB /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				ACEC7A8A29C778DD009F45FB /* UsersInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		ACEC7A8629C778C2009F45FB /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				ACEC7A8C29C778E5009F45FB /* UsersRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		ACEC7A8E29C778E8009F45FB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				ACEC7A8F29C778F4009F45FB /* UsersProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,10 +245,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACEC7A7A29C77102009F45FB /* User.swift in Sources */,
+				ACEC7A8B29C778DD009F45FB /* UsersInteractor.swift in Sources */,
 				ACEC7A5E29C748BA009F45FB /* UsersListViewController.swift in Sources */,
+				ACEC7A8D29C778E5009F45FB /* UsersRouter.swift in Sources */,
 				ACEC7A5A29C748BA009F45FB /* AppDelegate.swift in Sources */,
+				ACEC7A8929C778D6009F45FB /* UsersPresenter.swift in Sources */,
 				ACEC7A5C29C748BA009F45FB /* SceneDelegate.swift in Sources */,
 				ACEC7A7F29C7717D009F45FB /* UserTableViewCell.swift in Sources */,
+				ACEC7A9029C778F4009F45FB /* UsersProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

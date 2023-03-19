@@ -8,7 +8,6 @@
 import Foundation
 
 
-
 struct User: Codable {
     
     var id: Int?
@@ -17,4 +16,24 @@ struct User: Codable {
     var avatar: String?
     var creationDate: Int?
         
+}
+
+struct UserViewModel {
+    
+    let fullName: String
+    let avatar: String
+    let registrationDate: String
+    
+    let dateFormatter: DateFormatter = {
+       let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY-MM-DD"
+        return formatter
+    }()
+    
+    init(user: User) {
+        self.fullName = (user.firstName ?? "") + (user.lastName ?? "")
+        self.avatar = user.avatar ?? ""
+        self.registrationDate = dateFormatter.string(from: Date(timeIntervalSince1970: Double(user.creationDate ?? 0)))
+    }
+     
 }

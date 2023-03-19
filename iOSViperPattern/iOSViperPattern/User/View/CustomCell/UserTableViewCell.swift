@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import Kingfisher
 
-class UserTableViewCell: UITableViewCell {
+class UserTableViewCell: UITableViewCell, UsersTableViewCellProtocol {
     
     //MARK: - IBOutlets
     
@@ -28,5 +29,11 @@ class UserTableViewCell: UITableViewCell {
     
     private func setupImageView() {
         userImageView.layer.cornerRadius = userImageView.frame.height / 2
+    }
+    
+    func configure(viewModel: UserViewModel) {
+        userImageView.kf.setImage(with: URL(string: viewModel.avatar))
+        userTitleLabel.text = viewModel.fullName
+        userSubTitleLabel.text = viewModel.registrationDate
     }
 }

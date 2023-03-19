@@ -7,7 +7,12 @@
 
 import UIKit
 
-class UsersListViewController: UIViewController {
+class UsersListViewController: UIViewController, UsersViewProtocol {
+    
+    //MARK: - Variables
+    
+    var presenter: UsersPresenterProtocol?
+    private var activityIndicator: UIActivityIndicatorView?
     
     //MARK: - IBOutlets
     
@@ -26,7 +31,10 @@ class UsersListViewController: UIViewController {
         super.viewDidLoad()
         
         setupTitle()
+        presenter?.viewDidLoad()
     }
+        
+    //MARK: - Methods
     
     private func setupTitle() {
         
@@ -34,12 +42,29 @@ class UsersListViewController: UIViewController {
         title = "Users"
     }
     
+    func showsActivityIndicator() {
+        activityIndicator = UIActivityIndicatorView()
+        view.addSubview(activityIndicator!)
+        activityIndicator!.showsLargeContentViewer = true
+        activityIndicator!.startAnimating()
+    }
+    
+    func hidesActivityIndicator() {
+        activityIndicator?.stopAnimating()
+        activityIndicator?.removeFromSuperview()
+        activityIndicator = nil
+    }
+    
+    func reloadData() {
+        tableView.reloadData()
+    }
+    
 }
 
 extension UsersListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return presenter?.numberOfRows ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,7 +73,7 @@ extension UsersListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        // configure cell...
+        presenter?.configure(cell: cell, indexPath: indexPath)
         
         return cell
     }
