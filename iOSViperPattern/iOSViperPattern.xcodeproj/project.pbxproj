@@ -3,27 +3,35 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		ACEC7A5A29C748BA009F45FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7A5929C748BA009F45FB /* AppDelegate.swift */; };
 		ACEC7A5C29C748BA009F45FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7A5B29C748BA009F45FB /* SceneDelegate.swift */; };
-		ACEC7A5E29C748BA009F45FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7A5D29C748BA009F45FB /* ViewController.swift */; };
+		ACEC7A5E29C748BA009F45FB /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7A5D29C748BA009F45FB /* UsersListViewController.swift */; };
 		ACEC7A6129C748BA009F45FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACEC7A5F29C748BA009F45FB /* Main.storyboard */; };
 		ACEC7A6329C748BB009F45FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACEC7A6229C748BB009F45FB /* Assets.xcassets */; };
 		ACEC7A6629C748BB009F45FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACEC7A6429C748BB009F45FB /* LaunchScreen.storyboard */; };
+		ACEC7A6F29C74A2B009F45FB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = ACEC7A6E29C74A2B009F45FB /* Alamofire */; };
+		ACEC7A7729C770EE009F45FB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = ACEC7A7629C770EE009F45FB /* Kingfisher */; };
+		ACEC7A7A29C77102009F45FB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7A7929C77102009F45FB /* User.swift */; };
+		ACEC7A7F29C7717D009F45FB /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7A7E29C7717D009F45FB /* UserTableViewCell.swift */; };
+		ACEC7A8129C77483009F45FB /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACEC7A8029C77483009F45FB /* UserTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ACEC7A5629C748BA009F45FB /* iOSViperPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSViperPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACEC7A5929C748BA009F45FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACEC7A5B29C748BA009F45FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ACEC7A5D29C748BA009F45FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ACEC7A5D29C748BA009F45FB /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
 		ACEC7A6029C748BA009F45FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACEC7A6229C748BB009F45FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACEC7A6529C748BB009F45FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACEC7A6729C748BB009F45FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACEC7A7929C77102009F45FB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		ACEC7A7E29C7717D009F45FB /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		ACEC7A8029C77483009F45FB /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACEC7A7729C770EE009F45FB /* Kingfisher in Frameworks */,
+				ACEC7A6F29C74A2B009F45FB /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +66,50 @@
 		ACEC7A5829C748BA009F45FB /* iOSViperPattern */ = {
 			isa = PBXGroup;
 			children = (
-				ACEC7A5929C748BA009F45FB /* AppDelegate.swift */,
-				ACEC7A5B29C748BA009F45FB /* SceneDelegate.swift */,
-				ACEC7A5D29C748BA009F45FB /* ViewController.swift */,
-				ACEC7A5F29C748BA009F45FB /* Main.storyboard */,
+				ACEC7A7C29C77132009F45FB /* Application */,
+				ACEC7A7829C770FB009F45FB /* Model */,
+				ACEC7A7B29C7712B009F45FB /* View */,
 				ACEC7A6229C748BB009F45FB /* Assets.xcassets */,
 				ACEC7A6429C748BB009F45FB /* LaunchScreen.storyboard */,
 				ACEC7A6729C748BB009F45FB /* Info.plist */,
 			);
 			path = iOSViperPattern;
+			sourceTree = "<group>";
+		};
+		ACEC7A7829C770FB009F45FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ACEC7A7929C77102009F45FB /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ACEC7A7B29C7712B009F45FB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ACEC7A7D29C77169009F45FB /* CustomCell */,
+				ACEC7A5D29C748BA009F45FB /* UsersListViewController.swift */,
+				ACEC7A5F29C748BA009F45FB /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ACEC7A7C29C77132009F45FB /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				ACEC7A5929C748BA009F45FB /* AppDelegate.swift */,
+				ACEC7A5B29C748BA009F45FB /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		ACEC7A7D29C77169009F45FB /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				ACEC7A7E29C7717D009F45FB /* UserTableViewCell.swift */,
+				ACEC7A8029C77483009F45FB /* UserTableViewCell.xib */,
+			);
+			path = CustomCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +128,10 @@
 			dependencies = (
 			);
 			name = iOSViperPattern;
+			packageProductDependencies = (
+				ACEC7A6E29C74A2B009F45FB /* Alamofire */,
+				ACEC7A7629C770EE009F45FB /* Kingfisher */,
+			);
 			productName = iOSViperPattern;
 			productReference = ACEC7A5629C748BA009F45FB /* iOSViperPattern.app */;
 			productType = "com.apple.product-type.application";
@@ -103,7 +152,7 @@
 				};
 			};
 			buildConfigurationList = ACEC7A5129C748BA009F45FB /* Build configuration list for PBXProject "iOSViperPattern" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -111,6 +160,10 @@
 				Base,
 			);
 			mainGroup = ACEC7A4D29C748BA009F45FB;
+			packageReferences = (
+				ACEC7A6D29C74A2B009F45FB /* XCRemoteSwiftPackageReference "Alamofire" */,
+				ACEC7A7529C770EE009F45FB /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = ACEC7A5729C748BA009F45FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,6 +178,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACEC7A8129C77483009F45FB /* UserTableViewCell.xib in Resources */,
 				ACEC7A6629C748BB009F45FB /* LaunchScreen.storyboard in Resources */,
 				ACEC7A6329C748BB009F45FB /* Assets.xcassets in Resources */,
 				ACEC7A6129C748BA009F45FB /* Main.storyboard in Resources */,
@@ -138,9 +192,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACEC7A5E29C748BA009F45FB /* ViewController.swift in Sources */,
+				ACEC7A7A29C77102009F45FB /* User.swift in Sources */,
+				ACEC7A5E29C748BA009F45FB /* UsersListViewController.swift in Sources */,
 				ACEC7A5A29C748BA009F45FB /* AppDelegate.swift in Sources */,
 				ACEC7A5C29C748BA009F45FB /* SceneDelegate.swift in Sources */,
+				ACEC7A7F29C7717D009F45FB /* UserTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +272,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +326,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -295,6 +351,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,6 +380,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,6 +416,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ACEC7A6D29C74A2B009F45FB /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+		ACEC7A7529C770EE009F45FB /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ACEC7A6E29C74A2B009F45FB /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ACEC7A6D29C74A2B009F45FB /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		ACEC7A7629C770EE009F45FB /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ACEC7A7529C770EE009F45FB /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ACEC7A4E29C748BA009F45FB /* Project object */;
 }
